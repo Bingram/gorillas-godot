@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8qbh3plvypx0"]
+
+[ext_resource type="Texture2D" uid="uid://dnehs52rpn5cs" path="res://assets/gorilla_sml_p2.png" id="1_2tujd"]
+[ext_resource type="Texture2D" uid="uid://dv60lvwl8180s" path="res://assets/gorilla_sml_p2_stand.png" id="2_shyb0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t4g82"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2tujd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_shyb0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2tujd"]
+radius = 28.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t4g82")
+frame_progress = 0.118913
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_2tujd")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuvehkk0eqevq"]
+
+[ext_resource type="PackedScene" uid="uid://bnul1ridh4l2s" path="res://scenes/player_left.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://c8qbh3plvypx0" path="res://scenes/player_right.tscn" id="2_lnu2h"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player Left" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(-396, -26)
+
+[node name="Player Right" parent="." instance=ExtResource("2_lnu2h")]
+position = Vector2(335, -26)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-9, 16)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

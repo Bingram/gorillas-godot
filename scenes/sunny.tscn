@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcbhinye4anex"]
+
+[ext_resource type="Texture2D" uid="uid://dfys6o0o4j80e" path="res://assets/sun_happy_sml.png" id="1_chw40"]
+[ext_resource type="Texture2D" uid="uid://ctw0b2fiixpys" path="res://assets/sun_sad_sml.png" id="2_w8psw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0aq8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_chw40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w8psw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_chw40"]
+radius = 48.28
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q0aq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_chw40")
