@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://rk7tkr8lrs2b"]
+
+[ext_resource type="Texture2D" uid="uid://btmjbgbwstp4h" path="res://assets/banana_sml.png" id="1_xn0ju"]
+[ext_resource type="Script" uid="uid://ciskufe1b6630" path="res://scenes/banana_sml.gd" id="2_wteyy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wteyy"]
+radius = 14.0357
+
+[node name="Banana" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_wteyy")
+
+[node name="BananaSml" type="Sprite2D" parent="Area2D"]
+position = Vector2(-1, -4)
+texture = ExtResource("1_xn0ju")
+script = ExtResource("2_wteyy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

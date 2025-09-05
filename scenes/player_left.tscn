@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnul1ridh4l2s"]
+[gd_scene load_steps=6 format=3 uid="uid://bnul1ridh4l2s"]
 
 [ext_resource type="Texture2D" uid="uid://dlxiwwcg4q7nw" path="res://assets/gorilla_sml_p1.png" id="1_mfj8c"]
+[ext_resource type="Script" uid="uid://cta1bro486w3" path="res://scenes/player_left.gd" id="1_t43nw"]
 [ext_resource type="Texture2D" uid="uid://cre8k8xbjxxhq" path="res://assets/gorilla_sml_p1_stand.png" id="2_t43nw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t4g82"]
@@ -21,6 +22,7 @@ animations = [{
 radius = 28.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_t43nw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t4g82")
