@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnul1ridh4l2s"]
 
 [ext_resource type="Texture2D" uid="uid://dlxiwwcg4q7nw" path="res://assets/gorilla_sml_p1.png" id="1_mfj8c"]
-[ext_resource type="Script" uid="uid://cta1bro486w3" path="res://scenes/player_left.gd" id="1_t43nw"]
+[ext_resource type="Script" uid="uid://cta1bro486w3" path="res://scripts/player_left.gd" id="1_t43nw"]
 [ext_resource type="Texture2D" uid="uid://cre8k8xbjxxhq" path="res://assets/gorilla_sml_p1_stand.png" id="2_t43nw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t4g82"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_mfj8c")
+"duration": 2.0,
+"texture": ExtResource("2_t43nw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_t43nw")
+"texture": ExtResource("1_mfj8c")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -26,7 +26,7 @@ script = ExtResource("1_t43nw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t4g82")
-frame_progress = 0.118913
+animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
