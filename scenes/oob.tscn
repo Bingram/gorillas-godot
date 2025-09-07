@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn136rtmya2e5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b6x68"]
+a = Vector2(1, -76)
+b = Vector2(0, 95)
+
+[node name="OOB" type="Node2D" groups=["OOB"]]
+
+[node name="Area2D" type="Area2D" parent="." groups=["OOB"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["OOB"]]
+shape = SubResource("SegmentShape2D_b6x68")

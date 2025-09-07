@@ -1,34 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://cris22onw2ai6"]
+[gd_scene load_steps=6 format=3 uid="uid://cl2yb6l8ypboy"]
 
-[ext_resource type="Texture2D" uid="uid://dnehs52rpn5cs" path="res://assets/gorilla_sml_p2.png" id="1_2tujd"]
-[ext_resource type="Script" uid="uid://cta1bro486w3" path="res://scripts/player_left.gd" id="1_shyb0"]
-[ext_resource type="Texture2D" uid="uid://dv60lvwl8180s" path="res://assets/gorilla_sml_p2_stand.png" id="2_shyb0"]
+[ext_resource type="Script" uid="uid://drsnexi13bkg2" path="res://scripts/player.gd" id="1_shyb0"]
+[ext_resource type="Texture2D" uid="uid://dlxiwwcg4q7nw" path="res://assets/gorilla_sml_p1.png" id="2_58p0d"]
+[ext_resource type="Texture2D" uid="uid://cre8k8xbjxxhq" path="res://assets/gorilla_sml_p1_stand.png" id="3_js3r5"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t4g82"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
 animations = [{
 "frames": [{
-"duration": 2.0,
-"texture": ExtResource("2_shyb0")
+"duration": 1.0,
+"texture": ExtResource("2_58p0d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_2tujd")
+"texture": ExtResource("3_js3r5")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mfj8c"]
-radius = 28.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(17.7056, 19.2713)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="RigidBody2D" type="RigidBody2D"]
 script = ExtResource("1_shyb0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_t4g82")
-animation = &"new_animation"
-frame_progress = 0.545311
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_mfj8c")
+position = Vector2(-1.19209e-06, 0.903845)
+scale = Vector2(2.37213, 2.48077)
+shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="RotPoint" type="Marker2D" parent="."]
+position = Vector2(-17, -18)
+
+[node name="ShootPoint" type="Marker2D" parent="RotPoint"]
+
+[node name="Node2D" type="Node2D" parent="."]
